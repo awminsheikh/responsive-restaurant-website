@@ -119,63 +119,87 @@
         <h2 class="section-title">Choose Your Favourite Categories</h2>
         <div class="swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-filter=".burger">
               <div class="swiper-card">
                 <div class="category-img">
-                  <img src="assets/img/burger-icon.png" alt="" />
+                  <img
+                    class="category-image"
+                    src="assets/img/burger-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="category-title">
-                  <span>burger</span>
+                  <span class="category-span">burger</span>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-filter=".pizza">
               <div class="swiper-card">
                 <div class="category-img">
-                  <img src="assets/img/pizza-logo.png" alt="" />
+                  <img
+                    class="category-image"
+                    src="assets/img/pizza-logo.png"
+                    alt=""
+                  />
                 </div>
                 <div class="category-title">
-                  <span>pizza</span>
+                  <span class="category-span">pizza</span>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-filter=".meat">
               <div class="swiper-card">
                 <div class="category-img">
-                  <img src="assets/img/meat-icon.png" alt="" />
+                  <img
+                    class="category-image"
+                    src="assets/img/meat-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="category-title">
-                  <span>meat</span>
+                  <span class="category-span">meat</span>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-filter=".salad">
               <div class="swiper-card">
                 <div class="category-img">
-                  <img src="assets/img/Salad-icon.png" alt="" />
+                  <img
+                    class="category-image"
+                    src="assets/img/Salad-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="category-title">
-                  <span>salad</span>
+                  <span class="category-span">salad</span>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-filter=".appetizer">
               <div class="swiper-card">
                 <div class="category-img">
-                  <img src="assets/img/pishgaza-icon.png" alt="" />
+                  <img
+                    class="category-image"
+                    src="assets/img/pishgaza-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="category-title">
-                  <span>Appetizer</span>
+                  <span class="category-span">Appetizer</span>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide">
+            <div class="swiper-slide" data-filter=".soup">
               <div class="swiper-card">
                 <div class="category-img">
-                  <img src="assets/img/soup-icon.png" alt="" />
+                  <img
+                    class="category-image"
+                    src="assets/img/soup-icon.png"
+                    alt=""
+                  />
                 </div>
                 <div class="category-title">
-                  <span>soup</span>
+                  <span class="category-span">soup</span>
                 </div>
               </div>
             </div>
@@ -185,10 +209,16 @@
         </div>
       </section>
       <!-- menu items -->
-      <section class="section menu__items bd-container">
-        <h2 class="menu-list-title col-12">Salad</h2>
-        <div class="menu__container menu-list row bd-grid">
-          <div class="menu-item">
+      <section class="section container menu__items bd-container">
+        <h2 class="menu-list-title col-12 mix burger">burger</h2>
+        <h2 class="menu-list-title col-12 mix pizza">pizza</h2>
+        <h2 class="menu-list-title col-12 mix meat">meat</h2>
+        <h2 class="menu-list-title col-12 mix salad">Salad</h2>
+        <h2 class="menu-list-title col-12 mix appetizer">appetizer</h2>
+        <h2 class="menu-list-title col-12 mix soup">soup</h2>
+        <div class="menu__container  menu-list row bd-grid">
+          
+          <div class="menu-item mix burger">
             <div class="item-image">
               <img src="assets/img/salad.jpg" alt="" class="item-img" />
             </div>
@@ -222,7 +252,7 @@
             </div>
           </div>
 
-          <div class="menu-item">
+          <div class="menu-item mix pizza">
             <div class="item-image">
               <img src="assets/img/salad2.jpg" alt="" class="item-img" />
             </div>
@@ -690,6 +720,9 @@
     <!--========== SCROLL REVEAL ==========-->
     <script src="https://unpkg.com/scrollreveal"></script>
 
+    <!-- jquery cdn link -->
+    <script src="assets/js/mixitup.min.js"></script>
+    <script></script>
     <!--========== swiper JS ==========-->
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script>
@@ -721,6 +754,15 @@
           el: ".swiper-pagination",
         },
       });
+    </script>
+    <script src="assets/js/mixitup.min.js"></script>
+    <script>
+      var containerEl = document.querySelector(".container");
+
+      var mixer = mixitup(containerEl);
+      
+      // Set the default filter to show only the items with the class "my-default-filter"
+      mixer.filter(".burger");
     </script>
     <!--========== MAIN JS ==========-->
     <script src="assets/js/main.js"></script>
