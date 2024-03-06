@@ -92,10 +92,14 @@ themeButton.addEventListener('click', () => {
 
 
 //filtering part
-/*
 const swiperSlide = document.getElementsByClassName("swiper-slide");
+swiperSlide[1].classList.add("active")
 for (let y = 0; y < swiperSlide.length; y++) {
+
     swiperSlide[y].addEventListener("click", (event) => {
+        for (let z = 0; z < swiperSlide.length; z++) {
+            swiperSlide[z].classList.remove("active")
+        }
         let swiperClass = event.target.classList
         let targetCategory
         if (swiperClass.contains("swiper-slide")) {
@@ -116,7 +120,6 @@ for (let y = 0; y < swiperSlide.length; y++) {
         else if (swiperClass.contains("category-span")) {
             targetCategory = event.target.parentElement.parentElement.parentElement;
         }
-        let filter = targetCategory.getAttribute("target-menu")
-        filtering(filter)
+        targetCategory.classList.add("active")
     });
-}*/
+}
