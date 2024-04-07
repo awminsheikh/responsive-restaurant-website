@@ -16,6 +16,8 @@
   --category-container-color-: #138a50b4;
   --category-font-color-: #000;
   --item-text-color-: #000;
+  --item-container-: #069c54;
+  
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -86,6 +88,7 @@ body.dark-theme {
   --category-container-color-: #27302c;
   --category-font-color-: ghostwhite;
   --item-text-color-: ghostwhite;
+  --item-container-: #27302c;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -183,7 +186,6 @@ img {
 
 .l-main a {
   text-decoration: none;
-  color: inherit;
 }
 
 /*========== NAV ==========*/
@@ -469,7 +471,7 @@ a.menu__button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--category-font-color-);
+  color: ghostwhite;
   background-color: transparent;
 }
 
@@ -477,12 +479,14 @@ a.menu__button {
   cursor: pointer;
 }
 .swiper .swiper-wrapper .swiper-slide.active .category-img img{
-  background-color: var(--first-color);
+  /* background-color: #DADFF7; */
+  /* background-color: #49D49D; */
+  background-color: var(--first-color-alt);
 }
 .swiper-card {
   width: 60%;
   height: 60%;
-  background-color: var(--category-container-color-);
+  background-color: var(--item-container-);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -538,6 +542,8 @@ section.section.menu__items {
 .menu-list-title {
   text-align: center;
   text-transform: capitalize;
+  margin-bottom: 1rem;
+  color: var(--first-color);
 }
 
 .menu-list {
@@ -551,7 +557,9 @@ section.section.menu__items {
 
 .menu-item {
   height: 30vh;
-  background-color: var(--category-container-color-);
+  background-position: center;
+  background-size: cover;
+  background-color: var(--item-container-);
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -607,7 +615,7 @@ a.order-btn {
   color: ghostwhite;
   margin-right: 2rem;
   font-size: 1.7em;
-  background-color: var(--first-color);
+  background-color: green;
   width: 50px;
   height: 40px;
   display: flex;
@@ -623,7 +631,9 @@ a.order-btn {
 .price {
   font-size: 1.2em;
 }
-
+.menu__category .section-title{
+  margin: 1rem 0 0 0;
+}
 /*========== CONTACT ==========*/
 .contact__container {
   text-align: center;
@@ -791,17 +801,19 @@ a.order-btn {
 
   .home__img {
     width: 500px;
-    animation: animated forwards ease-in-out;
-    animation-duration: 1s;
+    animation: animated  5s infinite;
+
   }
 
   @keyframes animated {
     0% {
-      transform: translateY(50px);
+      transform: translateY(20px);
     }
-
+    50%{
+      transform: translateY(-20px);
+    }
     100% {
-      transform: translateY(0);
+      transform: translateY(20px);
     }
 
   }
